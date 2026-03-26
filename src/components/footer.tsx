@@ -5,7 +5,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="col-span-1 md:col-span-2">
             <h2 className="font-orbitron text-2xl font-bold text-white mb-4">
-              Ведущий<span className="text-yellow-500"> Олег</span>
+              Олег<span className="text-yellow-500"> «Ангара»</span>
             </h2>
             <p className="text-gray-300 mb-4 max-w-md font-geist">
               Провожу свадьбы, юбилеи и корпоративы, которые гости вспоминают годами. Ярко, стильно, без банальщины.

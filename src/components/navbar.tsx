@@ -11,7 +11,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <h1 className="font-orbitron text-xl font-bold text-white">
-              Ведущий<span className="text-yellow-500"> Олег</span>
+              Олег<span className="text-yellow-500"> «Ангара»</span>
             </h1>
           </div>
 
