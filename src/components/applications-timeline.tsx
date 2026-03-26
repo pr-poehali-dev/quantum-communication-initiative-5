@@ -1,110 +1,78 @@
-export function ApplicationsTimeline() {
-  const steps = [
-    {
-      number: "01",
-      title: "Созваниваемся",
-      description:
-        "Обсуждаем ваше мероприятие: дата, формат, пожелания. Никаких шаблонных вопросов — только то, что важно именно вам.",
-      details: ["Бесплатная консультация", "Удобный для вас формат связи", "Ответы на все вопросы"],
-    },
-    {
-      number: "02",
-      title: "Обсуждаем формат",
-      description:
-        "Вместе определяем стиль праздника, тайминг и программу. Учитываю ваши пожелания, возраст гостей и атмосферу события.",
-      details: ["Индивидуальный подход", "Гибкая программа", "Учёт всех пожеланий"],
-    },
-    {
-      number: "03",
-      title: "Делаю сценарий",
-      description:
-        "Готовлю уникальный сценарий специально для вашего мероприятия. Координирую работу с диджеем и другими подрядчиками.",
-      details: ["Уникальный сценарий", "Работа с диджеем", "Полная координация"],
-    },
-    {
-      number: "04",
-      title: "Провожу мероприятие 🔥",
-      description:
-        "В день праздника беру на себя всё. Вы просто отдыхаете и наслаждаетесь — всё остальное на мне.",
-      details: ["Профессиональный звук", "Живой контакт с гостями", "Вы отдыхаете"],
-    },
-  ]
+const steps = [
+  { number: "01", title: "Диалог", description: "Созваниваемся и обсуждаем ваше событие без лишних формальностей" },
+  { number: "02", title: "Идея", description: "Формируем концепцию и атмосферу, которую хотите создать" },
+  { number: "03", title: "Подготовка", description: "Индивидуальный сценарий, координация с командой, все детали под контролем" },
+  { number: "04", title: "Событие", description: "Вы наслаждаетесь вечером. Всё остальное — на мне" },
+]
 
+export function ApplicationsTimeline() {
   return (
     <>
-      {/* Video / Photo section */}
-      <section id="video" className="py-24 px-6 bg-card">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
+      {/* Видео-блок */}
+      <section id="video" className="py-32 px-6 bg-[#0D0D0D]">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-20 slide-up">
+            <p className="font-geist text-xs text-[#C9A96E] tracking-[0.4em] uppercase mb-5">
               Портфолио
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-orbitron mb-4">
-              Посмотрите, как проходят мои мероприятия
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl text-white font-light italic">
+              Атмосфера в движении
             </h2>
-            <p className="text-muted-foreground text-lg">Живые эмоции говорят лучше любых слов 👇</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="aspect-video bg-background border border-yellow-500/20 flex flex-col items-center justify-center gap-4 group hover:border-yellow-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-full border-2 border-yellow-500/50 flex items-center justify-center group-hover:border-yellow-500 transition-all duration-300">
-                <span className="text-yellow-500 text-2xl">▶</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[1, 2].map((i) => (
+              <div
+                key={i}
+                className="aspect-video border border-[#C9A96E]/15 flex flex-col items-center justify-center gap-4 group hover:border-[#C9A96E]/40 transition-all duration-700 bg-[#0B0B0B] slide-up"
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                <div className="w-12 h-12 border border-[#C9A96E]/30 flex items-center justify-center group-hover:border-[#C9A96E]/70 transition-all duration-500">
+                  <span className="text-[#C9A96E]/60 text-base group-hover:text-[#C9A96E] transition-colors duration-500">▶</span>
+                </div>
+                <p className="font-geist text-xs text-white/20 tracking-[0.2em] uppercase">
+                  {i === 1 ? "Свадьба" : "Частное событие"}
+                </p>
               </div>
-              <p className="text-muted-foreground text-sm font-geist">Видео со свадьбы</p>
-            </div>
-            <div className="aspect-video bg-background border border-yellow-500/20 flex flex-col items-center justify-center gap-4 group hover:border-yellow-500/50 transition-all duration-300">
-              <div className="w-16 h-16 rounded-full border-2 border-yellow-500/50 flex items-center justify-center group-hover:border-yellow-500 transition-all duration-300">
-                <span className="text-yellow-500 text-2xl">▶</span>
-              </div>
-              <p className="text-muted-foreground text-sm font-geist">Видео с корпоратива</p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* How I work timeline */}
-      <section id="how" className="py-24 px-6 bg-background">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
+      {/* Как это происходит */}
+      <section id="how" className="py-32 px-6 bg-[#0B0B0B]">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-20 slide-up">
+            <p className="font-geist text-xs text-[#C9A96E] tracking-[0.4em] uppercase mb-5">
               Процесс
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground font-orbitron">
-              Как я работаю
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl text-white font-light italic">
+              Как это происходит
             </h2>
           </div>
 
           <div className="relative">
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-yellow-500/20 md:-translate-x-px" />
+            <div className="absolute left-8 top-4 bottom-4 w-px bg-gradient-to-b from-[#C9A96E]/30 via-[#C9A96E]/10 to-transparent hidden md:block" />
 
             <div className="space-y-12">
-              {steps.map((step, index) => (
+              {steps.map((step, i) => (
                 <div
-                  key={index}
-                  className={`relative flex flex-col md:flex-row gap-8 slide-up ${
-                    index % 2 === 1 ? "md:flex-row-reverse" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 0.15}s` }}
+                  key={i}
+                  className="flex gap-8 items-start slide-up"
+                  style={{ animationDelay: `${i * 0.12}s` }}
                 >
-                  <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-yellow-500 rounded-full -translate-x-1.5 md:-translate-x-2 top-6 z-10" />
-
-                  <div className={`md:w-1/2 pl-20 md:pl-0 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
-                    <div className="text-yellow-500/40 text-6xl font-bold font-orbitron leading-none mb-2">
-                      {step.number}
-                    </div>
-                    <h3 className="text-2xl font-bold text-foreground font-orbitron mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed mb-4">{step.description}</p>
-                    <div className={`space-y-2 ${index % 2 === 0 ? "md:ml-auto" : ""}`}>
-                      {step.details.map((detail, i) => (
-                        <div key={i} className={`flex items-center gap-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
-                          <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full flex-shrink-0" />
-                          <span className="text-yellow-500/70 text-sm font-geist">{detail}</span>
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex-shrink-0 w-16 h-16 border border-[#C9A96E]/20 items-center justify-center hidden md:flex">
+                    <span className="font-geist text-xs text-[#C9A96E]/50 tracking-widest">{step.number}</span>
                   </div>
-
-                  <div className="md:w-1/2" />
+                  <div className="flex-1 pb-12 border-b border-[#C9A96E]/8">
+                    <div className="flex items-center gap-4 mb-3">
+                      <span className="font-geist text-xs text-[#C9A96E]/40 tracking-widest md:hidden">{step.number}</span>
+                      <h3 className="font-display text-2xl md:text-3xl text-white font-light italic">{step.title}</h3>
+                    </div>
+                    <p className="font-geist text-sm text-white/35 font-light leading-relaxed tracking-wide">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

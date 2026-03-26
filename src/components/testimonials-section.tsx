@@ -1,68 +1,49 @@
-import { Card, CardContent } from "@/components/ui/card"
-
 const testimonials = [
   {
+    content: "Спокойно, уверенно и со вкусом",
     name: "Анна и Дмитрий",
-    role: "Свадьба",
-    initials: "АД",
-    content:
-      "Это был лучший ведущий! Все гости в восторге! Олег создал такую атмосферу, что мы забыли обо всех переживаниях и просто наслаждались праздником.",
+    event: "Свадьба",
   },
   {
+    content: "Гости были в восторге, но без перегруза",
     name: "Игорь",
-    role: "Корпоратив",
-    initials: "И",
-    content:
-      "Без колхоза, всё стильно и современно. Команда до сих пор вспоминает этот вечер. Точно обратимся снова!",
+    event: "Корпоратив",
   },
   {
+    content: "Именно то ощущение, которое хотелось. Никакой суеты — только атмосфера",
     name: "Марина",
-    role: "Юбилей мамы",
-    initials: "М",
-    content:
-      "Олег сделал юбилей мамы незабываемым. Гости разных возрастов — и все были вовлечены! Очень тактично, тепло и профессионально.",
+    event: "Юбилей",
   },
 ]
 
 export function TestimonialsSection() {
   return (
-    <section id="reviews" className="py-24 px-6 bg-card">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
+    <section id="reviews" className="py-32 px-6 bg-[#0D0D0D]">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-20 slide-up">
+          <p className="font-geist text-xs text-[#C9A96E] tracking-[0.4em] uppercase mb-5">
             Отзывы
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-4 font-orbitron">
+          </p>
+          <h2 className="font-display text-4xl md:text-5xl text-white font-light italic">
             Что говорят гости
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Реальные истории от реальных людей
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card
-              key={index}
-              className="border-yellow-500/20 bg-background slide-up hover:border-yellow-500/40 transition-all duration-300"
-              style={{ animationDelay: `${index * 0.15}s` }}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#C9A96E]/8">
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className="bg-[#0D0D0D] p-10 slide-up hover:bg-[#111] transition-colors duration-500"
+              style={{ animationDelay: `${i * 0.15}s` }}
             >
-              <CardContent className="p-8">
-                <div className="text-yellow-500 text-3xl mb-4 font-serif">"</div>
-                <p className="text-card-foreground mb-8 leading-relaxed text-base">
-                  {testimonial.content}
-                </p>
-                <div className="flex items-center gap-4 border-t border-yellow-500/10 pt-6">
-                  <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0">
-                    <span className="text-black text-sm font-bold font-geist">{testimonial.initials}</span>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-yellow-500 font-geist">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground font-geist">{testimonial.role}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              <p className="font-display text-xl md:text-2xl text-white font-light italic leading-relaxed mb-8">
+                «{t.content}»
+              </p>
+              <div className="border-t border-[#C9A96E]/10 pt-6">
+                <p className="font-geist text-sm text-[#C9A96E]/70 tracking-wide">{t.name}</p>
+                <p className="font-geist text-xs text-white/25 tracking-widest uppercase mt-1">{t.event}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

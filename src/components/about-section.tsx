@@ -1,58 +1,38 @@
 export function AboutSection() {
-  const highlights = [
-    "Без пошлых шуток и заезженных конкурсов",
-    "Индивидуальный сценарий под каждое событие",
-    "Лёгкая атмосфера и вовлечение всех гостей",
-  ]
-
   return (
-    <section id="about" className="py-24 px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="slide-up">
-            <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
-              О ведущем
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-orbitron leading-tight">
-              Привет!<br />Меня зовут Олег.
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Я профессиональный ведущий с большим опытом проведения торжеств. Мои мероприятия — это не «тамада с конкурсами», а стильные, современные и живые события.
-            </p>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Я работаю так, чтобы вы отдыхали, а не переживали.
-            </p>
+    <section id="about" className="py-32 px-6 bg-[#0B0B0B]">
+      <div className="max-w-3xl mx-auto text-center">
+        <div className="slide-up">
+          <p className="font-geist text-xs text-[#C9A96E] tracking-[0.4em] uppercase mb-12">
+            Смысл
+          </p>
 
-            <div className="space-y-4">
-              {highlights.map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-black text-xs font-bold">✓</span>
-                  </div>
-                  <span className="text-foreground font-geist">{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <p className="font-display text-3xl md:text-4xl lg:text-5xl text-white/40 font-light leading-relaxed mb-6 italic">
+            Хороший ведущий развлекает
+          </p>
 
-          <div className="relative slide-up" style={{ animationDelay: "0.2s" }}>
-            <div className="aspect-[3/4] bg-card border border-yellow-500/20 overflow-hidden relative">
-              <img
-                src="/placeholder.jpg"
-                alt="Ведущий Олег"
-                className="w-full h-full object-cover opacity-80"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="bg-black/80 border border-yellow-500/30 p-4">
-                  <p className="text-yellow-500 text-xs uppercase tracking-widest font-geist mb-1">Профессиональный ведущий</p>
-                  <p className="text-white font-bold text-lg font-orbitron">Олег</p>
-                </div>
-              </div>
-            </div>
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-2 border-yellow-500/30" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-yellow-500/30" />
-          </div>
+          <div className="divider-gold mb-6" />
+
+          <p className="font-display text-3xl md:text-4xl lg:text-5xl text-white font-light leading-relaxed mb-16 italic">
+            Сильный — управляет атмосферой
+          </p>
+
+          <p className="font-geist text-base md:text-lg text-white/50 font-light leading-relaxed tracking-wide max-w-xl mx-auto">
+            Я работаю так, чтобы<br />
+            гости чувствовали уровень,<br />
+            а вы —{" "}
+            <span className="text-[#C9A96E]">спокойствие</span>
+          </p>
+        </div>
+
+        <div className="mt-24 border border-[#C9A96E]/15 p-10 slide-up" style={{ animationDelay: "0.2s" }}>
+          <p className="font-display text-xl md:text-2xl text-white/60 font-light italic leading-relaxed mb-4">
+            Я не веду мероприятия «для галочки»
+          </p>
+          <p className="font-geist text-sm text-white/35 font-light leading-relaxed tracking-wide">
+            Я работаю с теми, кто понимает разницу<br />
+            между «весело» и «на уровне»
+          </p>
         </div>
       </div>
     </section>

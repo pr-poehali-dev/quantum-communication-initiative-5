@@ -1,39 +1,43 @@
-import { Button } from "@/components/ui/button"
-
 export function CTASection() {
   return (
-    <section id="contact" className="py-24 px-6 bg-card border-t border-yellow-500/10">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="py-32 px-6 bg-[#0D0D0D] border-t border-[#C9A96E]/10">
+      <div className="max-w-3xl mx-auto text-center">
         <div className="slide-up">
-          <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-6 font-medium">
+          <p className="font-geist text-xs text-[#C9A96E] tracking-[0.4em] uppercase mb-8">
             Стоимость
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-orbitron text-balance leading-tight">
-            Стоимость рассчитывается индивидуально
+          </p>
+
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white font-light italic mb-8 leading-tight">
+            Давайте обсудим<br />ваше событие
           </h2>
-          <p className="text-xl text-muted-foreground mb-4 leading-relaxed max-w-2xl mx-auto">
-            Напишите мне — подберу формат под ваш бюджет и расскажу о свободных датах.
+
+          <p className="font-geist text-sm text-white/35 font-light leading-relaxed tracking-wide mb-4 max-w-xl mx-auto">
+            Я работаю с ограниченным количеством мероприятий
           </p>
-          <p className="text-muted-foreground mb-12 font-geist">
-            📞 <a href="tel:+79873035772" className="text-yellow-500 hover:text-yellow-400 transition-colors">+7 987 303-57-72</a> &nbsp;·&nbsp; 📲 WhatsApp / Telegram &nbsp;·&nbsp; 📍 Ваш город
+          <p className="font-geist text-sm text-white/25 font-light leading-relaxed tracking-wide mb-16 max-w-xl mx-auto">
+            Стоимость формируется под задачу — напишите, предложу решение
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-yellow-500 text-black hover:bg-yellow-400 font-bold text-lg px-10 py-6 pulse-button"
-              onClick={() => window.open("https://wa.me/79873035772", "_blank")}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a
+              href="https://wa.me/79873035772"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block bg-[#C9A96E] text-[#0B0B0B] hover:bg-[#d4b87d] transition-colors duration-500 text-xs tracking-[0.3em] uppercase font-geist px-12 py-5 font-medium"
             >
-              Написать в WhatsApp
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-yellow-500/50 text-yellow-500 hover:bg-yellow-500 hover:text-black text-lg px-10 py-6 bg-transparent font-bold"
-              onClick={() => window.open("https://t.me/", "_blank")}
+              WhatsApp
+            </a>
+            <a
+              href="tel:+79873035772"
+              className="inline-block border border-[#C9A96E]/30 text-[#C9A96E]/70 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-500 text-xs tracking-[0.3em] uppercase font-geist px-12 py-5 font-medium"
             >
-              Написать в Telegram
-            </Button>
+              Позвонить
+            </a>
           </div>
+
+          <p className="font-geist text-xs text-white/20 tracking-widest">
+            +7 987 303-57-72 · Саратов
+          </p>
         </div>
       </div>
     </section>
