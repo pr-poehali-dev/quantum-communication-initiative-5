@@ -3,55 +3,58 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQSection() {
   const faqs = [
     {
-      question: "Насколько безопасна процедура SynapseAI?",
+      question: "Как узнать свободную дату?",
       answer:
-        "Да, процедура выполняется прецизионным хирургическим роботом и прошла обширное тестирование. Все материалы биосовместимы и одобрены FDA для медицинского применения.",
+        "Напишите мне в WhatsApp или Telegram — я отвечу в течение нескольких часов и скажу, свободен ли на вашу дату. Бронирование происходит после внесения предоплаты.",
     },
     {
-      question: "Сколько длится операция?",
+      question: "Сколько стоят ваши услуги?",
       answer:
-        "Малоинвазивная процедура обычно занимает 2-3 часа и проводится под местной анестезией с седацией.",
+        "Стоимость рассчитывается индивидуально — зависит от типа мероприятия, длительности и локации. Напишите мне, и я подберу формат под ваш бюджет.",
     },
     {
-      question: "Можно ли удалить устройство?",
+      question: "Вы работаете с диджеем?",
       answer:
-        "Да, SynapseAI разработан полностью обратимым. Устройство можно безопасно удалить при необходимости, хотя это требуется редко.",
+        "Да, у меня есть проверенные партнёры-диджеи, с которыми мы работаем в связке. Могу также работать с вашим диджеем — заранее согласуем все детали.",
     },
     {
-      question: "Какие ощущения при использовании SynapseAI?",
+      question: "Что если мероприятие за городом?",
       answer:
-        "Пользователи отмечают, что управление устройствами силой мысли ощущается естественно и интуитивно после короткого периода обучения. От самого импланта нет физических ощущений.",
+        "Я выезжаю за пределы города. Уточните локацию при обращении — обсудим детали и стоимость выезда.",
     },
     {
-      question: "Как долго работает батарея?",
+      question: "Как проходит подготовка к мероприятию?",
       answer:
-        "Устройство заряжается беспроводным способом и работает полный день на одном заряде. Зарядка выполняется внешним устройством, размещаемым рядом с головой.",
+        "После бронирования мы созваниваемся и обсуждаем все детали: ваши пожелания, гостей, тайминг. Я готовлю индивидуальный сценарий и согласовываю его с вами заранее.",
     },
     {
-      question: "Кто может получить SynapseAI?",
+      question: "Вы проводите мероприятия в будние дни?",
       answer:
-        "В настоящее время мы фокусируемся на людях с тяжелым параличом. Соответствие определяется через комплексную медицинскую оценку.",
+        "Да, я работаю в любой день — будни, выходные, праздники. Уточните дату, и я скажу о своей доступности.",
     },
   ]
 
   return (
-    <section className="py-24 bg-black">
+    <section id="faq" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-orbitron">Частые вопросы</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-space-mono">
-            Ответы на популярные вопросы о технологии SynapseAI, безопасности и опыте пациентов.
+          <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
+            Вопросы и ответы
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-orbitron">Частые вопросы</h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-geist">
+            Отвечаю на вопросы, которые чаще всего задают перед бронированием
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-red-500/20 mb-4">
-                <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-400 font-orbitron px-6 py-4">
+              <AccordionItem key={index} value={`item-${index}`} className="border-yellow-500/20 mb-4">
+                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-yellow-400 font-geist px-6 py-4">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-300 leading-relaxed px-6 pb-4 font-space-mono">
+                <AccordionContent className="text-muted-foreground leading-relaxed px-6 pb-4 font-geist">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

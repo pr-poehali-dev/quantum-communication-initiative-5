@@ -72,8 +72,8 @@ const Scene = () => {
         // Flow effect based on progress
         float flow = 1.0 - smoothstep(0.0, 0.02, abs(depth - uProgress));
 
-        // Red scanning overlay
-        vec3 mask = vec3(dot * flow * 10.0, 0.0, 0.0);
+        // Gold scanning overlay
+        vec3 mask = vec3(dot * flow * 8.0, dot * flow * 5.5, 0.0);
 
         // Combine effects
         vec3 final = baseColor.rgb + mask;
@@ -114,8 +114,8 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const titleWords = "Ведущий Олег".split(" ")
+  const subtitle = "Ярко · Стильно · Без банальщины"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -145,8 +145,11 @@ export const Hero3DWebGL = () => {
         <div className="absolute top-0 bottom-0 right-0 w-32 bg-gradient-to-l from-black to-transparent" />
       </div>
 
-      <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
-        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
+      <div className="h-screen items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
+        <div className="text-xs md:text-sm uppercase tracking-[0.3em] text-yellow-400/70 font-geist mb-4 font-medium">
+          🎤 Ведущий праздничных мероприятий
+        </div>
+        <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron uppercase">
           <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
             {titleWords.map((word, index) => (
               <div
@@ -162,7 +165,7 @@ export const Hero3DWebGL = () => {
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+        <div className="text-sm md:text-xl xl:text-2xl mt-3 overflow-hidden text-yellow-400 font-bold max-w-4xl mx-auto text-center px-4 tracking-widest uppercase">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
@@ -172,6 +175,38 @@ export const Hero3DWebGL = () => {
           >
             {subtitle}
           </div>
+        </div>
+        <div
+          className={`mt-4 text-sm text-white/60 font-geist text-center ${subtitleVisible ? "fade-in-subtitle" : ""}`}
+          style={{
+            animationDelay: `${titleWords.length * 0.13 + 0.6 + subtitleDelay}s`,
+            opacity: subtitleVisible ? undefined : 0,
+          }}
+        >
+          Провожу свадьбы, юбилеи и корпоративы, которые гости вспоминают годами
+        </div>
+        <div
+          className={`mt-2 text-xs text-white/40 font-geist text-center ${subtitleVisible ? "fade-in-subtitle" : ""}`}
+          style={{
+            animationDelay: `${titleWords.length * 0.13 + 0.8 + subtitleDelay}s`,
+            opacity: subtitleVisible ? undefined : 0,
+          }}
+        >
+          📍 Работаю по городу и выезжаю
+        </div>
+        <div
+          className={`mt-8 pointer-events-auto ${subtitleVisible ? "fade-in-subtitle" : ""}`}
+          style={{
+            animationDelay: `${titleWords.length * 0.13 + 1.0 + subtitleDelay}s`,
+            opacity: subtitleVisible ? undefined : 0,
+          }}
+        >
+          <a
+            href="#contact"
+            className="inline-block bg-yellow-500 hover:bg-yellow-400 text-black font-bold px-8 py-4 text-sm uppercase tracking-widest transition-all duration-300 font-geist"
+          >
+            Узнать свободную дату
+          </a>
         </div>
       </div>
 

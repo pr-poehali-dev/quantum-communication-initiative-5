@@ -1,59 +1,64 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const testimonials = [
   {
-    name: "Елена Родригес",
-    role: "Директор по нейронауке, Quantum Dynamics",
-    avatar: "/professional-woman-scientist.png",
+    name: "Анна и Дмитрий",
+    role: "Свадьба",
+    initials: "АД",
     content:
-      "SynapseAI изменил наш подход к нейрореабилитации. Результаты пациентов улучшились на 340% после внедрения.",
+      "Это был лучший ведущий! Все гости в восторге! Олег создал такую атмосферу, что мы забыли обо всех переживаниях и просто наслаждались праздником.",
   },
   {
-    name: "Маркус Уильямс",
-    role: "Руководитель исследований, Stellar Analytics",
-    avatar: "/cybersecurity-expert-man.jpg",
+    name: "Игорь",
+    role: "Корпоратив",
+    initials: "И",
     content:
-      "Точность и протоколы безопасности не имеют аналогов. Мы значительно ускорили клинические испытания с платформой SynapseAI.",
+      "Без колхоза, всё стильно и современно. Команда до сих пор вспоминает этот вечер. Точно обратимся снова!",
   },
   {
-    name: "Анна Ковальски",
-    role: "Вице-президент по разработке, Nova Industries",
-    avatar: "/asian-woman-tech-developer.jpg",
+    name: "Марина",
+    role: "Юбилей мамы",
+    initials: "М",
     content:
-      "Интеграция прошла безупречно. Адаптивные алгоритмы понимают намерения пользователя лучше любой системы, что мы тестировали.",
+      "Олег сделал юбилей мамы незабываемым. Гости разных возрастов — и все были вовлечены! Очень тактично, тепло и профессионально.",
   },
 ]
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 bg-card">
+    <section id="reviews" className="py-24 px-6 bg-card">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-card-foreground mb-4 font-sans">Нам доверяют лидеры</h2>
+          <div className="text-yellow-500 text-sm uppercase tracking-[0.3em] font-geist mb-4 font-medium">
+            Отзывы
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-card-foreground mb-4 font-orbitron">
+            Что говорят гости
+          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Что говорят лидеры индустрии о нашей революционной технологии
+            Реальные истории от реальных людей
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="glow-border slide-up" style={{ animationDelay: `${index * 0.15}s` }}>
-              <CardContent className="p-6">
-                <p className="text-card-foreground mb-6 leading-relaxed italic">"{testimonial.content}"</p>
-                <div className="flex items-center gap-4">
-                  <Avatar>
-                    <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                    <AvatarFallback>
-                      {testimonial.name
-                        .split(" ")
-                        .map((n) => n[0])
-                        .join("")}
-                    </AvatarFallback>
-                  </Avatar>
+            <Card
+              key={index}
+              className="border-yellow-500/20 bg-background slide-up hover:border-yellow-500/40 transition-all duration-300"
+              style={{ animationDelay: `${index * 0.15}s` }}
+            >
+              <CardContent className="p-8">
+                <div className="text-yellow-500 text-3xl mb-4 font-serif">"</div>
+                <p className="text-card-foreground mb-8 leading-relaxed text-base">
+                  {testimonial.content}
+                </p>
+                <div className="flex items-center gap-4 border-t border-yellow-500/10 pt-6">
+                  <div className="w-10 h-10 rounded-full bg-yellow-500 flex items-center justify-center flex-shrink-0">
+                    <span className="text-black text-sm font-bold font-geist">{testimonial.initials}</span>
+                  </div>
                   <div>
-                    <p className="font-semibold text-primary">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                    <p className="font-semibold text-yellow-500 font-geist">{testimonial.name}</p>
+                    <p className="text-sm text-muted-foreground font-geist">{testimonial.role}</p>
                   </div>
                 </div>
               </CardContent>
