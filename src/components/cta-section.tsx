@@ -15,13 +15,13 @@ export function CTASection() {
             Напишите мне — подберу формат под ваш бюджет и расскажу о свободных датах.
           </p>
           <p className="text-muted-foreground mb-12 font-geist">
-            📞 Телефон &nbsp;·&nbsp; 📲 WhatsApp / Telegram &nbsp;·&nbsp; 📍 Ваш город
+            📞 <a href="tel:+79873035772" className="text-yellow-500 hover:text-yellow-400 transition-colors">+7 987 303-57-72</a> &nbsp;·&nbsp; 📲 WhatsApp / Telegram &nbsp;·&nbsp; 📍 Ваш город
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               className="bg-yellow-500 text-black hover:bg-yellow-400 font-bold text-lg px-10 py-6 pulse-button"
-              onClick={() => window.open("https://wa.me/", "_blank")}
+              onClick={() => window.open("https://wa.me/79873035772", "_blank")}
             >
               Написать в WhatsApp
             </Button>
